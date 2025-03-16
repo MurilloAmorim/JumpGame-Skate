@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --gradient: linear-gradient(
+        to right,
+        purple 30%,
+        violet,
+        rgba(0, 114, 0, 0.986) 
+    )
+}
+
+.spicy-rice-regular {
+    font-family: "Spicy Rice", serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+body {
+    font-family: "Spicy Rice", serif;
+    background-image: linear-gradient(
+        to top left,
+        black 60%,
+        rgba(12, 114, 2, 0.986)
+    )
+}
+
+.GameBoard {
+    width: 90%;
+    height: 500px;
+    border: 5px solid blueviolet;
+    border-radius: 6px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    top: 100px;
+    background: linear-gradient(rgba(0, 221, 255, 0.455), white);
+}
+
+.Titulo {
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 40px;
+    font-size: 60px;
+}
+
+.CorTitulo {
+    width: 50%;
+    height: 10%;
+    background-image: var(--gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.character-selection {
+    display: flex;
+    justify-content: left;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-top: 80px;  /* Margem superior para separar dos outros elementos */
+}
+
+.character-box {
+    border: 2px solid blueviolet;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.character-box:hover {
+    transform: scale(1.2);
+    border: 2px solid rgba(12, 114, 2, 0.986);
+}
+
+.character-box img {
+    width: 50px;
+    height: 50px;
+}
+
+.selected-character {
+    margin-top: 30px;
+}
+
+.selected-character img {
+    width: 110px;
+    height: 110px;
+    border: 2px solid blueviolet;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+,seletor {
+    margin-top: 20%;
+}
+
+.Footer {
+    color: blueviolet;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.clouds {
+    position: absolute;
+    width: 355px;
+    animation: clouds-animation 10s infinite linear;
+    z-index: 1;
+}
+
+.street {
+    width: 200%; /* Duplicado para criar um loop contínuo */
+    height: 100px; /* Ajuste conforme a altura da rua */
+    position: absolute;
+    bottom: 0;
+    animation: street-animation 2s infinite linear;
+    z-index: 1;
+}
+
+.skate, .caindo {
+    width: 250px;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+
+.jump {
+    animation: pulo-animation 800ms ease-in-out;
+}
+
+.pedrinha {
+    position: absolute;
+    bottom: 0;
+    width: 70px;
+    right: 0; /* Inicializa do lado direito */
+    animation: pedrinha-animation 2.5s infinite linear;
+    z-index: 2;
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -60px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes street-animation {
+    from {
+        left: 0;
+    }
+    to {
+        left: -50%; /* Ajustado para movimento contínuo */
+    }
+}
+
+@keyframes pedrinha-animation {
+    from {
+        right: -40px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes pulo-animation {
+    0% {
+        bottom: 0px;
+    }
+    40% {
+        bottom: 135px;
+    }
+    50% {
+        bottom: 140px;
+    }
+    60% {
+        bottom: 135px;
+    }
+    100% {
+        bottom: 1px;
+    }
+}
