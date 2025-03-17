@@ -53,6 +53,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 
+    // Adiciona o evento de pular ao clicar na tela
+    document.addEventListener('click', () => {
+        jump();
+    });
+
     // Verifica a colisão a cada 50ms
     setInterval(checkCollision, 50);
 
