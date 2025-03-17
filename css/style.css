@@ -7,9 +7,9 @@
 :root{
     --gradient: linear-gradient(
         to right,
-        purple 30%,
-        violet,
-        rgba(0, 114, 0, 0.986) 
+        rgb(40, 0, 61) 30%,
+        rgb(127, 16, 118),
+        rgb(8, 173, 34)
     )
 }
 
@@ -20,18 +20,24 @@
   }  
 
 body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     font-family: "Spicy Rice", serif;
     background-image: linear-gradient(
         to top left,
         black 60%,
-        rgba(12, 114, 2, 0.986)
-    )
+        rgb(1, 84, 56)
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .GameBoard {
     width: 90%;
     height: 500px;
-    border: 5px solid blueviolet;
+    border: 5px solid rgb(40, 0, 61);
     border-radius: 6px;
     margin: 0 auto;
     position: relative;
@@ -45,13 +51,16 @@ body {
     text-align: center;
     letter-spacing: 5px;
     margin-top: 40px;
-    font-size: 60px;
+    font-size: 700%;
 }
 
 .CorTitulo {
+    text-align: center;
+    margin: 0 auto;
     width: 50%;
     height: 10%;
     background-image: var(--gradient);
+    -webkit-text-stroke: 1px rgb(163, 197, 167); /* Espessura e cor da borda */
 
     background-clip: text;
     -webkit-background-clip: text;
@@ -59,23 +68,26 @@ body {
 }
 
 .character-selection {
+    flex: 1; /* Faz com que o conteúdo principal cresça e empurre o footer para baixo */
     display: flex;
-    justify-content: left;
+    justify-content: center;
     gap: 20px;
     margin-bottom: 30px;
     margin-top: 80px;  /* Margem superior para separar dos outros elementos */
+    flex-wrap: wrap; /* Permite que os personagens se ajustem conforme necessário */
+    align-items: center; /* Centraliza os personagens verticalmente */
 }
 
 .character-box {
-    border: 2px solid blueviolet;
+    border: 2px solid rgb(127, 16, 118);
     padding: 10px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
 }
 
 .character-box:hover {
-    transform: scale(1.2);
-    border: 2px solid rgba(12, 114, 2, 0.986);
+    transform: scale(2);
+    border: 2px solid rgb(1, 84, 56);
 }
 
 .character-box img {
@@ -90,7 +102,7 @@ body {
 .selected-character img {
     width: 110px;
     height: 110px;
-    border: 2px solid blueviolet;
+    border: 2px solid rgb(127, 16, 118);
 }
 
 .wrapper {
@@ -99,15 +111,16 @@ body {
     min-height: 100vh;
 }
 
-,seletor {
+seletor {
     margin-top: 20%;
 }
 
 .Footer {
-    color: blueviolet;
+    color: rgb(127, 16, 118);
     padding: 10px;
+    padding-top: 19.125%;
     text-align: center;
-    margin-top: auto;
+    width: 100%;
 }
 
 .clouds {
