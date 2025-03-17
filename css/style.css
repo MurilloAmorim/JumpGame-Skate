@@ -118,9 +118,13 @@ seletor {
 .Footer {
     color: rgb(127, 16, 118);
     padding: 10px;
-    padding-top: 19.125%;
+    padding-top: 8.865%;
     text-align: center;
     width: 100%;
+}
+
+#FooterChooseCharacter {
+    padding-top: 19.125%;
 }
 
 .clouds {
